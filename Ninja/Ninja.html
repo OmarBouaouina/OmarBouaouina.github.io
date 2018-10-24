@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja</title>
+	<script src="jquery-3.3.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="Ninja.css">
+</head>
+<body>
+	<h1 align="Center">Jeu de Ninja</h1>
+	<table border="1" align="Center">
+		<tr>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div><img class="firstNinja" src="ninja.jpg"></div>
+					<div class="cacher"><img class="firstWhite" src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<div><img class="secondNinja" src="ninja.jpg"></div>
+					<div class="cacher"><img class="secondWhite" src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div class="white"><img src="white.png"></div>
+				</div>
+			</td>
+			<td>
+				<div>
+					<div><img class="thirdNinja" src="ninja.jpg"></div>
+					<div class="cacher"><img class="thirdWhite" src="white.png"></div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<button id="Play">Play</button>
+	<h1 class="begin" style="visibility: hidden" align="Center">Ninjas restants : <span id=restant>3</span></h1>
+	<h1 class="begin" style="visibility: hidden" align="Center">Echec : <span id=echec>0</span></h1>
+	<h1 id="message" style="visibility: hidden" align="Center">Vous avez terminé le jeu</h1>
+	<script src="Ninja.js"></script>
+</body>
+</html>

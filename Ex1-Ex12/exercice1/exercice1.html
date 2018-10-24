@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Un peu de texte mis en forme</title>
+	<style>
+	  h2 {
+	    font-size: 30px;
+		color: #a1b5ee;
+	  }	
+	</style>
+  </head>
+  <body>
+    <h2>Mon eFormation HTML5, CSS3 et JavaScript</h2>
+	<p id="paragraphe1">
+	  Ce livre fait partie de la collection "Mon eFormation, des éditions Pearson.
+	</p>
+	<p id="paragraphe2">
+	  A travers de très nombreux exemples, vous allez apprendre à utiliser les langages HTML5, CSS3 et JavaScript.<br>
+	  Après avoir lu le livre et pratiqué les exemples, vous serez à même de créer des pages Web interactives en partant de zéro ou d'améliorer le code créé par un CMS quelconque.
+	<p>
+    <p id="paragraphe3">
+	  Tous les exercices sont corrigés en vidéo. Rendez-vous sur le site Web http://moneformation.fr pour accéder aux vidéos.
+    </p>	
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+      $(function() {
+        $('#paragraphe1').css('color','red');
+        $('#paragraphe2').css('background-color','lightgrey');
+        $('#paragraphe3').css('font-weight','bold').css('color','#2b971b');
+      });
+    </script>
+  </body>
+</html>

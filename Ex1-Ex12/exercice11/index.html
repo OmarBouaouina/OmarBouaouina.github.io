@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page principale</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/sunny/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+      $(function() {
+        $("#menu").menu();
+      });
+    </script>
+  </head>
+  <body>
+    <header id="entete">
+	  <img id="image" src="html5css3jQuery.png">
+      <span id="titre">eFormation HTML5 CSS3 jQuery</span>
+    </header>
+    <nav id="lemenu">
+	  <ul id="menu">
+	    <li><a href="apropos.htm">A propos</a></li>
+        <li><a href="contact.htm">Nous contacter</a></li>
+        <li><a href="news.htm">News</a></li>
+        <li><a href="membre.htm">Zone membre</a></li>
+      </ul>  
+	  <select id="liste">
+	    <option value="" selected="selected">Menu</option>
+	    <option value="apropos.htm">A propos</option>
+	    <option value="contact.htm">Nous contacter</option>
+	    <option value="news.htm">News</option>
+	    <option value="membre.htm">Zone membre</option>
+      </select>		
+	</nav>	
+	  
+	<article id="corps">
+	  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    </article>	
+    <footer id="basdepage">
+      <span id="uni">Uni</span>
+      <span id="horizontal">Horizontal</span>
+      <span id="vertical">Vertical</span>
+      <span id="texture">Texture</span>
+      <span id="copy">Copyright (c) 2013</span>
+	</footer> 
+    <script>
+      $(function(){
+        $('#uni').click(function(){
+	      $('#corps').css('background','white');
+	    });
+        $('#horizontal').click(function(){
+		  $('#corps').css('background', '-moz-linear-gradient(top left, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 100% 0%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(left, red, yellow)');
+        });
+        $('#vertical').click(function(){
+	 	  $('#corps').css('background', '-moz-linear-gradient(top, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(top, red, yellow)');
+        });
+        $('#texture').click(function(){
+	 	  $('#corps').css('background', 'url(fond.gif)');
+        });
+		
+		$('#liste').on('change', function(){
+		  window.location = $(this).val();
+		});
+      });
+    </script>
+  </body>
+</html>

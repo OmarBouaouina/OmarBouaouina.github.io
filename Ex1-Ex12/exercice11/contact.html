@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulaire de contact</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/sunny/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+      $(function() {
+        $("#menu").menu();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="entete">
+	  <img id="image" src="html5css3jQuery.png">
+      <span id="titre">eFormation HTML5 CSS3 jQuery</span>
+    </div>
+    <div id="lemenu">
+	  <ul id="menu">
+	    <li><a href="apropos.htm">A propos</a></li>
+        <li><a href="contact.htm">Nous contacter</a></li>
+        <li><a href="news.htm">News</a></li>
+        <li><a href="membre.htm">Zone membre</a></li>
+      </ul>  
+	</div>	
+	  
+	<div id="corps">
+	  <p>Entrez votre adresse email, votre message et cliquez sur le bouton Envoyer.</p>
+      <form action="mail2.php" method="post">
+        <label>Email</label><input type="mail" name="mail" required><br>
+        <label>Message</label><textarea cols="50" rows="8" name="message"></textarea><br>
+        <input type="submit" value="Envoyer">
+      </form>
+    </div>	
+    <div id="basdepage">
+      <span id="uni">Uni</span>
+      <span id="horizontal">Horizontal</span>
+      <span id="vertical">Vertical</span>
+      <span id="texture">Texture</span>
+      <span id="copy">Copyright (c) 2013</span>
+	</div> 
+    <script>
+      $(function(){
+        $('#uni').click(function(){
+	      $('#corps').css('background','white');
+	    });
+        $('#horizontal').click(function(){
+		  $('#corps').css('background', '-moz-linear-gradient(top left, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 100% 0%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(left, red, yellow)');
+        });
+        $('#vertical').click(function(){
+	 	  $('#corps').css('background', '-moz-linear-gradient(top, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(top, red, yellow)');
+        });
+        $('#texture').click(function(){
+	 	  $('#corps').css('background', 'url(fond.gif)');
+        });
+      });
+    </script>
+  </body>
+</html>

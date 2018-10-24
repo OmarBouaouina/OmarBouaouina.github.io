@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Les news du site</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/sunny/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+      $(function() {
+        $("#menu").menu();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="entete">
+	  <img id="image" src="html5css3jQuery.png">
+      <span id="titre">eFormation HTML5 CSS3 jQuery</span>
+    </div>
+    <div id="lemenu">
+	  <ul id="menu">
+	    <li><a href="apropos.htm">A propos</a></li>
+        <li><a href="contact.htm">Nous contacter</a></li>
+        <li><a href="news.htm">News</a></li>
+        <li><a href="membre.htm">Zone membre</a></li>
+      </ul>  
+	</div>	
+	  
+	<div id="corps">
+      <br><table>
+	    <tr><th class="col1">Date</th><th class="col2">Evénement</th></tr>
+		<tr><td>20/11/2013</td><td>Mise en ligne du site</td></tr>
+		<tr><td>20/12/2013</td><td>Mille membres actifs</td></tr>
+		<tr><td>20/01/2013</td><td>Un million de visiteurs ! (on peut rêver)</td></tr>
+	  </table>	
+    </div>	
+    <div id="basdepage">
+      <span id="uni">Uni</span>
+      <span id="horizontal">Horizontal</span>
+      <span id="vertical">Vertical</span>
+      <span id="texture">Texture</span>
+      <span id="copy">Copyright (c) 2013</span>
+	</div> 
+    <script>
+      $(function(){
+        $('#uni').click(function(){
+	      $('#corps').css('background','white');
+	    });
+        $('#horizontal').click(function(){
+		  $('#corps').css('background', '-moz-linear-gradient(top left, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 100% 0%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(left, red, yellow)');
+        });
+        $('#vertical').click(function(){
+	 	  $('#corps').css('background', '-moz-linear-gradient(top, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(top, red, yellow)');
+        });
+        $('#texture').click(function(){
+	 	  $('#corps').css('background', 'url(fond.gif)');
+        });
+      });
+    </script>
+  </body>
+</html>

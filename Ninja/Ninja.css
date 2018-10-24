@@ -1,0 +1,28 @@
+.firstNinja{
+	position:relative;
+}
+.firstWhite{
+	position:absolute;
+	top:85px;
+}
+.secondNinja{
+	position:relative;
+}
+.secondWhite{
+	position:absolute;
+	top:345px;
+}
+.thirdNinja{
+	position:relative;
+}
+.thirdWhite{
+	position:absolute;
+	top:610px;
+}
+button{
+	width: 100px;
+	height: 50px;
+	font-size: 30px;
+	position: relative;
+	left:900px;
+}

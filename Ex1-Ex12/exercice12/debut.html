@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page principale</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/sunny/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="jquerysite.js"></script>
+	<script>
+      $(function() {
+        $("#menu").menu();
+      });
+    </script>
+  </head>
+  <body>
+    <header id="entete">
+	  <img id="image" src="html5css3jQuery.png">
+      <span id="titre">eFormation HTML5 CSS3 jQuery</span>
+    </header>
+    <nav id="lemenu">
+	  <ul id="menu">
+	    <li><a href="apropos.php">A propos</a></li>
+        <li><a href="contact.php">Nous contacter</a></li>
+        <li><a href="news.php">News</a></li>
+        <li><a href="membre.php">Zone membre</a></li>
+      </ul>  
+	  <select id="liste">
+	    <option value="" selected="selected">Menu</option>
+	    <option value="apropos.php">A propos</option>
+	    <option value="contact.php">Nous contacter</option>
+	    <option value="news.php">News</option>
+	    <option value="membre.php">Zone membre</option>
+      </select>		
+	</nav>	
