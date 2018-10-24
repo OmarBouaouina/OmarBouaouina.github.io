@@ -21,32 +21,32 @@
 		</form>
 		<table border="1">
 			<tr>
+				<td><input class="bouton" type="button" value="<" onclick="effacerDernierElement()"></td>
+				<td><input class="bouton" type="button" value="(" onclick="taperNumero('(')"></td>
+				<td><input class="bouton" type="button" value=")" onclick="taperNumero(')')"></td>
+				<td><input class="bouton" type="button" value="/" onclick="taperNumero('/')"></td>
+			</tr>
+			<tr>
 				<td><input class="bouton" type="button" value="7" onclick="taperNumero(7)"></td>
 				<td><input class="bouton" type="button" value="8" onclick="taperNumero(8)"></td>
 				<td><input class="bouton" type="button" value="9" onclick="taperNumero(9)"></td>
-				<td><input class="bouton" type="button" value="/" onclick="taperNumero('/')"></td>
+				<td><input class="bouton" type="button" value="*" onclick="taperNumero('*')"></td>
 			</tr>
 			<tr>
 				<td><input class="bouton" type="button" value="4" onclick="taperNumero(4)"></td>
 				<td><input class="bouton" type="button" value="5" onclick="taperNumero(5)"></td>
 				<td><input class="bouton" type="button" value="6" onclick="taperNumero(6)"></td>
-				<td><input class="bouton" type="button" value="*" onclick="taperNumero('*')"></td>
+				<td><input class="bouton" type="button" value="-" onclick="taperNumero('-')"></td>
 			</tr>
 			<tr>
 				<td><input class="bouton" type="button" value="1" onclick="taperNumero(1)"></td>
 				<td><input class="bouton" type="button" value="2" onclick="taperNumero(2)"></td>
 				<td><input class="bouton" type="button" value="3" onclick="taperNumero(3)"></td>
-				<td><input class="bouton" type="button" value="-" onclick="taperNumero('-')"></td>
-			</tr>
-			<tr>
-				<td><input class="bouton" type="button" value="0" onclick="taperNumero(0)"></td>
-				<td><input class="bouton" type="button" value="(" onclick="taperNumero('(')"></td>
-				<td><input class="bouton" type="button" value=")" onclick="taperNumero(')')"></td>
 				<td><input class="bouton" type="button" value="+" onclick="taperNumero('+')"></td>
 			</tr>
 			<tr>
+				<td><input class="bouton" type="button" value="0" onclick="taperNumero(0)"></td>
 				<td><input class="bouton" type="button" value="." onclick="taperNumero('.')"></td>
-				<td><input class="bouton" type="button" value="<" onclick="effacerDernierElement()"></td>
 				<td colspan="2"><input style="width:108px" class="bouton" type="button" value="=" onclick="egaleA()"></td>
 			</tr>
 		</table>
@@ -54,3 +54,4 @@
 	<script src="Calculatrice.js"></script>
 </body>
 </html>
+
