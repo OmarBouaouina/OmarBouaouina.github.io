@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Cliquer sur le bouton "Localiser" pour avoir vos coordonnées</h1>
+
+<button onclick="getLocation()">Localiser</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else { 
+        x.innerHTML = "Geolocalisation n'est pas supportée avec ce navigateur.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "L'utilisateur a refusé la demande de géolocalisation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Les informations de localisation sont indisponibles."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "La demande d'obtention de l'emplacement de l'utilisateur a expiré."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "Une erreur inconnue est survenue."
+            break;
+    }
+}
+</script>
+
+</body>
+</html>
