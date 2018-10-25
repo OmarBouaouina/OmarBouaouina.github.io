@@ -63,15 +63,16 @@ bouton.addEventListener("click",function(){
 	} 
 	else{
 	 	b++;
-	 	
 	}
-	if ($('#score').val()<3 && b == 6) {
+	if (($('#score').val())<3 && (b == 6)) {
    		alert("Sorry, You Have Lost!");
    		$('.toHide').show();
    		$('.frog').hide();
    		bla=1;
+   		a=0;
+   		b=0;
 	}
-	if ($('#score').val() == 3 ) {
+	if (($('#score').val()) == 3 ) {
    		alert("You Have Won!");
    		$('.toHide').show();
    		$('.frog').hide();
