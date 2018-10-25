@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page principale</title>
+    <link rel="stylesheet" href="site.css">
+	<script src="jquery-3.3.1.js"></script>
+  </head>
+  <body>
+      <div id="entete">
+        eFormation HTML5 CSS3 jQuery
+      </div>
+	<div id="corps">
+	  <ul>
+	    <li><a href="apropos.html">A propos</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="membre.html">Zone membre</a></li>
+      </ul>  
+    </div>	
+    <div id="basdepage">
+      <span id="uni">Uni</span>
+      <span id="horizontal">Horizontal</span>
+      <span id="vertical">Vertical</span>
+      <span id="copy">Copyright (c) 2013</span>
+	</div> 
+    <script>
+      $(function(){
+        $('#uni').click(function(){
+	    $('#corps').css('background','white');
+	  });
+      $('#horizontal').click(function(){
+		$('#corps').css('background', '-moz-linear-gradient(top left, red, yellow)')
+                   .css('background', '-webkit-gradient(linear, 0% 0%, 100% 0%, from(red), to(yellow))')
+                   .css('background', '-ms-linear-gradient(left, red, yellow)');
+      });
+      $('#vertical').click(function(){
+		$('#corps').css('background', '-moz-linear-gradient(top, red, yellow)')
+                   .css('background', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(yellow))')
+                   .css('background', '-ms-linear-gradient(top, red, yellow)');
+		});
+      });
+    </script>
+  </body>
+</html>

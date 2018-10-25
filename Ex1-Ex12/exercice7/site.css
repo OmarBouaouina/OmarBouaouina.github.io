@@ -1,0 +1,80 @@
+@font-face 
+{
+  font-family: Onthemove;
+  src: url('onthemove.ttf');
+  src: url('onthemove.eot');
+  src: url('onthemove.svg');
+  src: url('onthemove.woff');
+}
+
+* { 
+  font-family: "Onthemove"; 
+  font-size: 30px;
+}
+
+#entete {
+  background-color: #01B0F0;
+  height: 170px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px grey;  
+}
+#image { 
+  float: left; 
+  padding-top: 25px;
+}
+#titre  { 
+  float: right; 
+  font-size: 60px; 
+  padding-top:100px;
+  padding-right: 20px;
+  text-shadow: 4px 4px 4px grey;
+}
+#basdepage {
+  background-color: #01B0F0;
+  height: 30px;
+  border-radius: 15px; 
+  box-shadow: 5px 5px 5px grey;  
+}
+
+#uni, #horizontal, #vertical, #texture {
+  padding-left:20px;
+  cursor: pointer; 
+}  
+
+#copy {
+  padding-right: 30px;
+  float: right;
+}  
+
+ul {margin:0;}
+
+#corps {
+  height: 400px;   
+  border-radius: 15px; 
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-shadow: 5px 5px 5px grey;  
+}
+
+#lemenu {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}  
+
+.ui-menu { min-height: 47px; }
+
+#menu>li { 
+  width: 200px;
+  float: left;
+}
+
+label, input { 
+  margin-left: 10px; 
+  margin-bottom: 15px;
+}
+label {
+  display: inline-block;
+  width: 100px;
+}
+input[type=text]:invalid, input[type=password]:invalid {background-color: red; }
+input[type=text]:valid, input[type=password]:valid {background-color: green; }

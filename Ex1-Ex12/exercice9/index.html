@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Page principale</title>
+    <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="./jquery-ui-1.10.4.custom/css/sunny/jquery-ui-1.10.4.custom.css">
+  <script src="jquery-3.3.1.js"></script>
+    <script src="./jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+      $(function() {
+        $("#menu").menu();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="entete">
+	  <img id="image" src="html5css3jQuery.png">
+      <span id="titre">eFormation HTML5 CSS3 jQuery</span>
+    </div>
+    <div id="lemenu">
+	  <ul id="menu">
+	    <li><a href="apropos.html">A propos</a></li>
+        <li><a href="contact.html">Nous contacter</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="membre.html">Zone membre</a></li>
+      </ul>  
+	</div>	
+	  
+	<div id="corps">
+	  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    </div>	
+    <div id="basdepage">
+      <span id="uni">Uni</span>
+      <span id="horizontal">Horizontal</span>
+      <span id="vertical">Vertical</span>
+      <span id="texture">Texture</span>
+      <span id="copy">Copyright (c) 2013</span>
+	</div> 
+    <script>
+      $(function(){
+        $('#uni').click(function(){
+	      $('#corps').css('background','white');
+	    });
+        $('#horizontal').click(function(){
+		  $('#corps').css('background', '-moz-linear-gradient(top left, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 100% 0%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(left, red, yellow)');
+        });
+        $('#vertical').click(function(){
+	 	  $('#corps').css('background', '-moz-linear-gradient(top, red, yellow)')
+                     .css('background', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(red), to(yellow))')
+                     .css('background', '-ms-linear-gradient(top, red, yellow)');
+        });
+        $('#texture').click(function(){
+	 	  $('#corps').css('background', 'url(fond.gif)');
+        });
+      });
+    </script>
+  </body>
+</html>
