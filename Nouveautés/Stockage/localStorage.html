@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function clickCounter() {
+    if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+            localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "Vous avez cliquer le bouton " + localStorage.clickcount + " fois.";
+    } else {
+        document.getElementById("result").innerHTML = "Votre navigateur ne supporte pas le stockage en web.";
+    }
+}
+</script>
+</head>
+<body>
+<h1>Stockage de la valeur sans expiration:</h1>
+<p>Cliquer sur le bouton pour incrémenter..</p>
+<p>Fermer le navigateur (ou l'onglet) et essayez de taper le bouton, vous allez voir que le compteur reprendra avec la dernière valeur.</p>
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+<div id="result"></div>
+</body>
+</html>
