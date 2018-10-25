@@ -1,3 +1,73 @@
+<?php 
+
+// include autoloader
+
+
+// Output the generated PDF to Browser
+
+
+
+if(isset($_POST["action"]))
+{
+ require_once 'dompdf/autoload.inc.php';
+
+// reference the Dompdf namespace
+	use Dompdf\Dompdf;
+	$file_name = md5(rand()) . '.pdf';
+// instantiate and use the dompdf class
+	$dompdf = new Dompdf();
+	$dompdf->loadHtml(file_get_contents('CV.html'));
+
+// (Optional) Setup the paper size and orientation
+	$dompdf->setPaper(array(0,0,1903,1079.78), 'portrait');
+
+// Render the HTML as PDF
+	$dompdf->render();
+ 	$file = $dompdf->output();
+ 	file_put_contents($file_name, $file);
+ 	require_once 'PHPMailer-6.0.5/src/PHPMailer.php';
+ 	$mail = new PHPMailer;
+ 	$mail->isSMTP();
+//Enable SMTP debugging
+// 0 = off (for production use)
+// 1 = client messages
+// 2 = client and server messages
+	$mail->SMTPDebug = 2;
+//Set the hostname of the mail server
+	$mail->Host = 'smtp.gmail.com';
+// use
+// $mail->Host = gethostbyname('smtp.gmail.com');
+// if your network does not support SMTP over IPv6
+//Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+	$mail->Port = 587;
+//Set the encryption system to use - ssl (deprecated) or tls
+	$mail->SMTPSecure = 'tls';
+//Whether to use SMTP authentication
+	$mail->SMTPAuth = false;
+//Username to use for SMTP authentication - use full email address for gmail
+// $mail->Username = "username@gmail.com";
+// //Password to use for SMTP authentication
+// $mail->Password = "yourpassword";
+// //Set who the message is to be sent from
+	$mail->setFrom('omar.bouaouina@etudiant-enit.utm.tn', 'Omar');
+//Set who the message is to be sent to
+	$mail->addAddress('phantomnius@gmail.com', 'Omar Bouaouina');
+	// $mail->WordWrap = 50;
+	// $mail->IsHTML(true);
+	$mail->addAttachment($file_name);
+	if (!$mail->send()) {
+    	echo "Mailer Error: " . $mail->ErrorInfo;
+	} else {
+   		echo "Message sent!";
+    //Section 2: IMAP
+    //Uncomment these to save your message in the 'Sent Mail' folder.
+    #if (save_mail($mail)) {
+    #    echo "Message saved!";
+    #}
+	}
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +97,7 @@
 		
 		<div id="contactDetails" class="quickFade delayFour">
 			<ul>
-				<li>e: <a href="https://www.enit.rnu.tn/" target="_blank">ENIT</a></li>
+				<li>e: <a href="http://www.enit.rnu.tn/" target="_blank">ENIT</a></li>
 				<li>a: Rue Béchir Salem Belkhiria Campus universitaire, BP 37, 1002, Le Bélvédère, 1002, Tunis</li>
 				<li>m: 01234567890</li>
 			</ul>
@@ -136,8 +206,8 @@
 			</div>
 			
 			<div class="sectionContent">
-				<form>
-					<input type="button" value="Télécharger en PDF" onclick="window.location.href='localhost:81/Telecharger_PDF.php'" />
+				<form method="post">
+						<input type="submit" name="action" value="Envoi PDF">
 				</form>
 			</div>
 			<div class="clear"></div>
@@ -146,7 +216,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "https://www.");
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 </script>
 <script type="text/javascript">
