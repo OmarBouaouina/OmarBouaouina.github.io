@@ -10,6 +10,28 @@
 <link type="text/css" rel="stylesheet" href="style.css">
 <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css'>
 
+<script src="html2canvas.js"></script>
+<script src="jsPDF-master/jsPDF.js"></script>
+<script type="text/javascript">
+	function getPDF(){
+		html2canvas(document.body,{
+			onrendered: function(canvas){
+				var img = canvas.toDataURL("image/png");
+				var doc = new jsPDF();
+				doc.addImage(img,'JPEG',20,20);
+				doc.save('Test.pdf');
+			}
+		})
+		
+		// html2canvas(document.body).then(function (canvas) {
+  //   			var img = new Image();
+		// 		img.setAttribute('crossOrigin', 'anonymous');
+		// 		img.src = "https://www.google.tn/search?q=jspdf&oq=jspdf&aqs=chrome..69i57j69i61j69i60l2j0l2.954j0j7&sourceid=chrome&ie=UTF-8";
+		// 		var doc = new jsPDF();
+		// 		doc.addImage(img,'JPEG',20,20);
+		// 		doc.save('Test.pdf');
+}
+</script>
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
@@ -136,9 +158,10 @@
 			</div>
 			
 			<div class="sectionContent">
-				<form>
-					<input type="button" value="Télécharger en PDF" onclick="window.location.href='localhost:81/Telecharger_PDF.php'" />
-				</form>
+				<!-- <form>
+					<input type="button" value="Télécharger en PDF" onclick="window.location.href='https://github.com/OmarBouaouina/OmarBouaouina.github.io/blob/master/CV/Telecharger_PDF.php'" />
+				</form> -->
+				<button onclick="getPDF()">Telecharger</button>
 			</div>
 			<div class="clear"></div>
 		</section>
