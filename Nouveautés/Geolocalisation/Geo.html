@@ -1,35 +1,3 @@
-<!-- <html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <script src="jquery-3.3.1.js"></script>
-  </head>
-  <body>
-  <div id="navbar"><span>Red Stapler - Geolocation API</span></div>
-  <div id="wrapper">
-    <button id="location-button">Get User Location</button>
-    <div id="output"></div>
-  </div>
-  
-  <script>
-          $('#location-button').click(function(){
-        
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position){
-                  console.log(position);
-                  $.get( "http://maps.googleapis.com/maps/api/geocode/json?latlng="+ position.coords.latitude + "," + position.coords.longitude +"&sensor=false", function(data) {
-                    console.log(data);
-                  })
-                  var img = new Image();
-                  img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + position.coords.latitude + "," + position.coords.longitude + "&zoom=13&size=800x400&sensor=false";
-                  $('#output').html(img);
-                });
-                
-            }
-          });
-  </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +7,7 @@
     body { height: 100%; margin: 0px; padding: 0px }
     #map_canvas { height: 100% ; width:100%;}
   </style>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+  <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script> 
   <script type="text/javascript">
     var previousPosition = null;
   
